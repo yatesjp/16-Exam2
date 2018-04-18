@@ -3,7 +3,7 @@ Exam 1, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -154,9 +154,21 @@ def problem2(n, seq):
       :type seq:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    count = 0
+    retlist = []
+
+    for k in range(len(seq)):
+        if seq[k] < n:
+            count += 1
+            retlist = retlist + [seq[k]]
+        if count == 3:
+            return retlist
+
+    return 'Too few'
 
 
 ###############################################################################
