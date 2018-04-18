@@ -2,8 +2,8 @@
 Exam 2, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  April 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jonah Yates.  April 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the code of the  Rect  class below.
+# Done: 2.  READ the code of the  Rect  class below.
 #
 #   Once you are confident that you understand the  Rect  class and its code,
 #   change the TO-DO for this problem to DONE.
@@ -29,12 +29,29 @@ class Rect(object):
 def run_test_problem1():
     """ Tests the   problem1   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement at least 2 tests of the  problem1  function.
+    # Done: 3. Implement at least 2 tests of the  problem1  function.
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
     print('Testing the   problem1   function:')
     print('--------------------------------------------------')
+
+    charlie = Rect(4, 5)
+    fred = Rect(8, 3)
+    jack = Rect(9, 1)
+    todd = Rect(5, 5)
+    henry = Rect(6, 4)
+
+    expected = 53
+    actual = problem1([jack, fred, charlie])
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    print()
+    expected = 78
+    actual = problem1([jack, todd, charlie, henry])
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def problem1(rectangles):
@@ -53,8 +70,16 @@ def problem1(rectangles):
     :return: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     # -------------------------------------------------------------------------
+
+    total = 0
+
+    for k in range(len(rectangles)):
+        temp = rectangles[k]
+        total = total + (temp.w * temp.h)
+
+    return total
 
 
 # -----------------------------------------------------------------------------
