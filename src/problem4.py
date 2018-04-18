@@ -3,7 +3,7 @@ Exam 2, problem 4.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.  April 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -18,12 +18,12 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_problem4a()
-    # run_test_problem4b()
+    run_test_problem4a()
+    run_test_problem4b()
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   is_prime   function below.
+# Done: 2.  READ the doc-string for the   is_prime   function below.
 #           It is the same  is_prime  function that you have used previously,
 #           except that it returns  False  for all integers less than 2.
 #
@@ -153,9 +153,15 @@ def problem4a(strings):
       :type [str]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    for k in range(len(strings)):
+        if is_prime(len(strings[k])):
+            return strings[k]
+
+    return -1
 
 
 def run_test_problem4b():
@@ -249,11 +255,20 @@ def problem4b(list_of_tuples_of_strings):
       :type [str]
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #    *** IMPORTANT:  THIS PROBLEM COUNTS ONLY 2 POINTS
     #                    AND HAS AN ELEGANT SOLUTION.  DO NOT GET STUCK ON IT!
     # -------------------------------------------------------------------------
+
+    for k in range(len(list_of_tuples_of_strings)):
+        for j in range(len(list_of_tuples_of_strings[k])):
+            temp1 = list_of_tuples_of_strings[k]
+            temp2 = temp1[j]
+            if is_prime(len(temp2)):
+                return True
+
+    return False
 
 
 ###############################################################################
